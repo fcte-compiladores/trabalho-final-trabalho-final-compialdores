@@ -1,0 +1,18 @@
+start: "validar" "{" entradas "}"
+
+entradas: entrada ("," entrada)*
+entrada: tipo ":" valor
+
+tipo: CPF | CNPJ | DATA | EMAIL | TELEFONE
+
+CPF: "CPF"
+CNPJ: "CNPJ"
+DATA: "DATA"
+EMAIL: "EMAIL"
+TELEFONE: "TELEFONE"
+
+valor: ESCAPED_STRING
+
+%import common.ESCAPED_STRING
+%import common.WS
+%ignore WS
